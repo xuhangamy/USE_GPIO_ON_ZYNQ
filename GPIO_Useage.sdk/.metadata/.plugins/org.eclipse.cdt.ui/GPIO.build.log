@@ -1,0 +1,21 @@
+17:59:29 **** Auto Build of configuration Debug for project GPIO ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../GPIO_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: GPIO.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../GPIO_bsp/ps7_cortexa9_0/lib -o "GPIO.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: GPIO.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size GPIO.elf  |tee "GPIO.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24940	   1112	  29828	  55880	   da48	GPIO.elf
+'Finished building: GPIO.elf.size'
+' '
+
+17:59:31 Build Finished (took 1s.629ms)
+
